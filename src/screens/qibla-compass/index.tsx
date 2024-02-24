@@ -22,8 +22,8 @@ import styles from "./styles";
 
 const platfromAdUnitId =
   Platform.OS === "ios"
-    ? "ca-app-pub-2278638882204045/9186531439"
-    : "ca-app-pub-2278638882204045/6155961849";
+    ? "ca-app-pub-2278638882204045/6649929941"
+    : "ca-app-pub-2278638882204045/6696347191";
 
 const adUnitId = __DEV__ ? TestIds.BANNER : platfromAdUnitId;
 
@@ -50,52 +50,61 @@ export const QiblaCompass = () => {
         </View>
       )}
       {!isLoading && !error && (
-        <View
-          style={{
-            position: "relative",
-            height: 300,
-            width: 300,
-            padding: 20,
-          }}
-        >
+        <>
           <View
-            style={[
-              styles.compassImageContainer,
-              {
-                transform: [
-                  {
-                    rotate: compassRotate + "deg",
-                  },
-                ],
-              },
-              isFacingQibla && {
-                shadowColor: COLORS.PRIMARY,
-                shadowOffset: { width: -2, height: 10 },
-                shadowOpacity: 0.3,
-                shadowRadius: 10,
-              },
-            ]}
+            style={{
+              position: "relative",
+              height: 300,
+              width: 300,
+              padding: 20,
+            }}
           >
-            <CompassSvg />
+            <View
+              style={[
+                styles.compassImageContainer,
+                {
+                  transform: [
+                    {
+                      rotate: compassRotate + "deg",
+                    },
+                  ],
+                },
+                isFacingQibla && {
+                  shadowColor: COLORS.PRIMARY,
+                  shadowOffset: { width: -2, height: 10 },
+                  shadowOpacity: 0.3,
+                  shadowRadius: 10,
+                },
+              ]}
+            >
+              <CompassSvg />
+            </View>
+            <View style={styles.arrowImageContainer}>
+              <Image
+                source={require("@/assets/arrow.png")}
+                style={styles.arrowImage}
+              />
+            </View>
+            <View
+              style={[
+                styles.kabaImageContainer,
+                { transform: [{ rotate: qiblaRotate + "deg" }] },
+              ]}
+            >
+              <Image
+                source={require("@/assets/kaba.png")}
+                style={styles.kabaImage}
+              />
+            </View>
           </View>
-          <View style={styles.arrowImageContainer}>
-            <Image
-              source={require("@/assets/arrow.png")}
-              style={styles.arrowImage}
-            />
-          </View>
-          <View
-            style={[
-              styles.kabaImageContainer,
-              { transform: [{ rotate: qiblaRotate + "deg" }] },
-            ]}
-          >
-            <Image
-              source={require("@/assets/kaba.png")}
-              style={styles.kabaImage}
-            />
-          </View>
-        </View>
+          <Text style={styles.infoText}>
+            To ensure optimal performance, please make sure the device is placed
+            in a horizontal position, parallel to the ground, and kept away from
+            magnetic fields. Additionally, ensure that the device is connected
+            to the internet and that location services are enabled for the
+            compass to function accurately.
+          </Text>
+        </>
       )}
       {!isLoading && error && (
         <View style={styles.errorContainer}>

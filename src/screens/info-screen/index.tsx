@@ -16,8 +16,7 @@ export const InfoScreen = () => {
     <SafeAreaView style={styles.safeArea}>
       <StatusBar style="auto" />
       <ScrollView style={styles.container}>
-        <Text style={styles.heading}>Qibla Compass - Your Guide to Mecca</Text>
-
+        <Text style={styles.heading}>Qibla Compass App</Text>
         <View style={styles.section}>
           <Text style={styles.sectionHeading}>About Qibla Compass:</Text>
           <Text style={styles.sectionText}>

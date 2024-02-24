@@ -71,6 +71,13 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
   },
+  infoText: {
+    fontSize: 12,
+    color: COLORS.SLATE_900,
+    fontFamily: FONTS.REGULAR,
+    textAlign: "center",
+    padding: 20,
+  },
 });
 
 export default styles;
