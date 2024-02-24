@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "qibla-compass",
+    "name": "Qibla Compass",
     "slug": "qibla-compass",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,22 +9,47 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#f8fafc"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.edinkahvedzic.qiblacompass",
+      "buildNumber": "3"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#f8fafc"
+      },
+      "package": "com.edinkahvedzic.qiblacompass",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-font",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "6dfb4a90-932c-47bf-bc2e-f1a189c8ff68"
+      }
+    },
+    "owner": "edinkahvedzic"
+  },
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-2278638882204045~3205508958",
+    "ios_app_id": "ca-app-pub-2278638882204045~4158168980"
   }
 }
